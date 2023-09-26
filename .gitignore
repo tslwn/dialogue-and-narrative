@@ -1,0 +1,15 @@
+# Conda
+.empty
+
+# Jupyter
+**/.ipynb_checkpoints
+**/data_cache
+
+# macOS
+**/.DS_store
+
+# Python
+**/__pycache__
+**/.mypy_cache
+**/.pytest_cache
+*.pickle

@@ -1,0 +1,20 @@
+name: dn
+channels:
+  - defaults
+dependencies:
+  - gensim
+  - pytorch==2.1
+  - python==3.11
+  - mypy
+  - numpy
+  - datasets
+  - jupyter_client[version='<8']
+  - scipy
+  - scikit-learn
+  - notebook
+  - ipykernel
+  - pyzmq[version='<25']
+  - nltk
+  - pytest
+  - nptyping
+  - spacy
