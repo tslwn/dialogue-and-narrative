@@ -13,7 +13,7 @@ See also [interactive-ai-cdt](https://github.com/tslwn/interactive-ai-cdt).
 Create a Python virtual environment:
 
 ```bash
-conda env create -f environment.yml
+conda env create -f requirements.txt
 conda activate dn
 ```
 
@@ -21,6 +21,5 @@ Install/update Python dependencies:
 
 ```bash
 conda install foo
-conda env export --from-history > environment.yml
 pip list --format=freeze > requirements.txt
 ```
