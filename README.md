@@ -5,6 +5,7 @@ This repository holds the code written in the course of the
 unit for my PhD in the [UKRI Centre for Doctoral Training in Interactive
 Artificial Intelligence](https://www.bristol.ac.uk/cdt/interactive-ai/) at the
 University of Bristol.
+
 See also [interactive-ai-cdt](https://github.com/tslwn/interactive-ai-cdt).
 
 ## Setup
