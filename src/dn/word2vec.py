@@ -9,7 +9,7 @@ import numpy
 import numpy.typing
 from numpy.linalg import norm
 from nptyping import Float, NDArray, Shape
-from Modules.doc2dial import load_dataset
+from .doc2dial import load_dataset
 
 Vector = NDArray[Shape["*"], Float]
 Matrix = NDArray[Shape["*, *"], Float]

@@ -19,11 +19,11 @@ class Tokenizer:
     """A tokenizer based on scikit-learn's CountVectorizer."""
 
     def __init__(self, documents: Sequence[Document]) -> None:
-        self._vectorizer = CountVectorizer(tokenizer=tokenize)
+        self.__vectorizer = CountVectorizer(tokenizer=tokenize)
 
-        self._vectorizer.fit([document["text"] for document in documents])  # type: ignore
+        self.__vectorizer.fit([document["text"] for document in documents])  # type: ignore
 
-        self.vocabulary: dict[str, int] = self._vectorizer.vocabulary_  # type: ignore
+        self.vocabulary: dict[str, int] = self.__vectorizer.vocabulary_  # type: ignore
 
     def map(
         self, documents: Sequence[Document]

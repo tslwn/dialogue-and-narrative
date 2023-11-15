@@ -4,10 +4,8 @@
 import json
 from typing import Any, Generator
 import spacy
-from Modules.bigram_language_model.ngram_model import NgramModel
-from Modules.bigram_language_model.preprocessing import ngrams, pad
-
-nlp = spacy.load("en_core_web_sm")
+from dn.bigram_language_model.ngram_model import NgramModel
+from dn.bigram_language_model.preprocessing import ngrams, pad
 
 
 def load_dataset(count: int | None = None) -> list[str]:
@@ -16,7 +14,7 @@ def load_dataset(count: int | None = None) -> list[str]:
         *generate_examples(
             # The filepath of the training data from the repository:
             # https://github.com/doc2dial/sharedtask-dialdoc2021
-            "../../sharedtask-dialdoc2021/data/doc2dial/v1.0.1/doc2dial_dial_train.json",
+            "../../../sharedtask-dialdoc2021/data/doc2dial/v1.0.1/doc2dial_dial_train.json",
         )
     ]
     return [
@@ -48,6 +46,7 @@ def generate_examples(
 
 
 if __name__ == "__main__":
+    nlp = spacy.load("en_core_web_sm")
     dataset = load_dataset(100)
     docs = [list(token.text for token in nlp(doc)) for doc in dataset]
 

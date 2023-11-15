@@ -1,4 +1,5 @@
 """Preprocessing utilities."""
+
 from collections.abc import Generator, Iterable
 from typing import TypeVar
 import random
@@ -59,8 +60,9 @@ def train_test_split(
     """
     sequence = list(sequence)
 
-    # Return a new sequence in pseudo-random order.
     random.seed(seed)
+
+    # Return a new sequence in pseudo-random order.
     shuffled = random.sample(sequence, len(sequence))
 
     # Split the sequence into train and test sequences.
