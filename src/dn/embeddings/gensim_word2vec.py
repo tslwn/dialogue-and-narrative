@@ -13,7 +13,7 @@ class GensimWord2Vec(AbstractTermVectors):
 
     def __init__(self, documents: list[str]):
         super().__init__(documents)
-        self._word2vec = Word2Vec(
+        self.__word2vec = Word2Vec(
             list(
                 list(tokenize(document, lowercase=True))
                 for document in documents
@@ -25,11 +25,11 @@ class GensimWord2Vec(AbstractTermVectors):
         )
 
     def terms(self) -> Generator[str, None, None]:
-        for term in self._word2vec.wv.index_to_key:
+        for term in self.__word2vec.wv.index_to_key:
             yield term
 
     def term_index(self, term: str) -> int:
-        return self._word2vec.wv.key_to_index[term]
+        return self.__word2vec.wv.key_to_index[term]
 
     def term_vector(self, term: str) -> NDArray[float64]:
-        return self._word2vec.wv[term]
+        return self.__word2vec.wv[term]

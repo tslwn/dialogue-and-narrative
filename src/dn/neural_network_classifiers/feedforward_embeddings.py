@@ -30,26 +30,26 @@ class FeedforwardTextClassifierEmbeddings(FeedforwardTextClassifier):
             sequence_length,
         )
 
-        self._embeddings: KeyedVectors = gensim.downloader.load(
+        self.__embeddings: KeyedVectors = gensim.downloader.load(
             "glove-twitter-25"
         )
 
-        self._embedding_dim = self._embeddings.vectors.shape[1]
+        self.__embedding_dim = self.__embeddings.vectors.shape[1]
 
-        self._embeddings_reindex = torch.zeros(
-            (num_embeddings, self._embedding_dim)
+        self.__embeddings_reindex = torch.zeros(
+            (num_embeddings, self.__embedding_dim)
         )
 
         for word in tokenizer.vocabulary:
-            if word in self._embeddings:
-                self._embeddings_reindex[
+            if word in self.__embeddings:
+                self.__embeddings_reindex[
                     tokenizer.vocabulary[word]
                 ] = torch.from_numpy(  # type: ignore
-                    self._embeddings[word]
+                    self.__embeddings[word]
                 )
 
         self._embedding_layer = torch.nn.Embedding.from_pretrained(  # type: ignore
-            self._embeddings_reindex, freeze=False
+            self.__embeddings_reindex, freeze=False
         )
 
         self._hidden_layer = torch.nn.Linear(

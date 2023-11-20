@@ -4,8 +4,8 @@
 # pyright: reportUnknownMemberType=false
 
 from math import prod
-from Modules.bigram_language_model.ngram_model import NgramModel
-from Modules.bigram_language_model.preprocessing import ngrams, pad, tokenize
+from dn.bigram_language_model.ngram_model import NgramModel
+from dn.bigram_language_model.preprocessing import ngrams, pad, tokenize
 
 
 def exercise_3_4():

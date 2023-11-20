@@ -13,7 +13,7 @@ class AbstractTermVectors:
     """
 
     def __init__(self, documents: list[str]):
-        self._documents = documents
+        self.documents = documents
 
     @abstractmethod
     def terms(self) -> Generator[str, None, None]:
